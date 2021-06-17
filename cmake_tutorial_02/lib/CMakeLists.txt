@@ -49,7 +49,7 @@ target_include_directories(
 )
 
 # Configuration
-set(config_install_dir "${CMAKE_INSTALL_PREFIX}/cmake/")
+set(config_install_dir "cmake/")
 set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/cmake")
 set(version_config "${generated_dir}/${PROJECT_NAME}ConfigVersion.cmake")
 set(project_config "${generated_dir}/${PROJECT_NAME}Config.cmake")
@@ -78,9 +78,10 @@ install(
     INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 )
 
+
 install(
-    DIRECTORY "include"
-    DESTINATION "${CMAKE_INSTALL_PREFIX}"
+    DIRECTORY "include/HellowLib"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
     FILES_MATCHING PATTERN "*.h"
 )
 
