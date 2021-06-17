@@ -67,6 +67,12 @@ configure_package_config_file(
     INSTALL_DESTINATION "${config_install_dir}"
 )
 
+ # Add an "uninstall" target 
+ configure_file("${CMAKE_CURRENT_LIST_DIR}/cmake/uninstall_target.cmake.in" 
+                "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall_target.cmake" IMMEDIATE @ONLY) 
+ add_custom_target(uninstall "${CMAKE_COMMAND}" -P 
+                   "${CMAKE_CURRENT_BINARY_DIR}/cmake/uninstall_target.cmake") 
+
 # INSTALL 
 install(
     TARGETS ${PROJECT_NAME} 
