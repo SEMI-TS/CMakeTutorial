@@ -37,7 +37,6 @@ set(SRC
     src/HellowLib.cpp
 )
 
-add_compile_definitions(EXPORTS)
 add_library(${PROJECT_NAME} SHARED ${SRC})
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC "${PROJECT_NAME}:DEBUG=$<CONFIG:Debug>")
