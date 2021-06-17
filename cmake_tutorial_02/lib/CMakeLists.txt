@@ -37,6 +37,7 @@ set(SRC
     src/HellowLib.cpp
 )
 
+add_compile_definitions(EXPORTS)
 add_library(${PROJECT_NAME} SHARED ${SRC})
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC "${PROJECT_NAME}:DEBUG=$<CONFIG:Debug>")
@@ -55,7 +56,7 @@ target_include_directories(
 
 set(config_install_dir "${CMAKE_INSTALL_PREFIX}/cmake/")
 
-set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/generated")
+set(generated_dir "${CMAKE_CURRENT_BINARY_DIR}/cmake")
 
 # Configuration
 set(version_config "${generated_dir}/${PROJECT_NAME}ConfigVersion.cmake")
